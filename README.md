@@ -28,8 +28,11 @@ In this first version of the project, we created a simpler model, with only a on
   Visualizing the bigram dataset.
 
   ![image](https://github.com/user-attachments/assets/3dec20ce-2653-4c32-803b-ff9d6f67e6e7)
+  
 
-  ``` Python code - Generate names after training
+   Generate names after training
+   
+  ``` Python 
 
       g=torch.Generator().manual_seed(2147483647)
       for i in range(5):
@@ -43,11 +46,11 @@ In this first version of the project, we created a simpler model, with only a on
                  break
          print('.join(out)')
 
-         junide.
-         janasah.
-         p.
-         copy.
-         a.
+         junide
+         janasah
+         p
+         copy
+         a
 ```
   ##  2 - Second Version
   In the second version of the project, I implemented embedding layers, which enabled more efficient training.
