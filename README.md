@@ -59,14 +59,14 @@ In this first version of the project, we created a simpler model, with only a on
   In the second version of the project, I implemented embedding layers, which enabled more efficient training.
 
    
-   ``` Embedding Layer 
+   ``` Python
 
        emb.view(emb.shape[0],emb.shape[1]*emb.shape[2])[:5]
    ```
 
    2.1 - Summary of the full network
    
-   ```
+   ``` Python
       g=torch.Generator().manual_seed(2134563788) # for reproducibility
       C=torch.randn([27,2],requires_grad=True)
       w1=torch.randn([6,100],requires_grad=True)
@@ -85,9 +85,9 @@ In this first version of the project, we created a simpler model, with only a on
 
 2.4 - Generate names after training
 
-   ```
+   ``` Python
      g=torch.Generator().manual_seed(2147483647+10)
-    for _  in range(20):
+     for _  in range(20):
       out = []
     
       context=[0] * block_size
