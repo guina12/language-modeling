@@ -127,7 +127,10 @@ In this first version of the project, we created a simpler model, with only a on
    pxnt.
    porou.
 ```
-    
+2.4 - Results 
+
+   ![image](https://github.com/user-attachments/assets/eca3f3b0-f561-453c-bb8e-87310682e864)
+
 
 
 
