@@ -156,9 +156,56 @@ In this first version of the project, we created a simpler model, with only a on
 
    ![image](https://github.com/user-attachments/assets/8c5f345b-a9f9-49d8-a935-2fb38b64b19c)
 
- 3.4 - Batch Normalization
+ 3.4 - Batch Normalization + Training Loop
 
+   ``` Python
 
+  batch_size=32
+  max_steps=10000
+  
+  for  i in range(max_steps):
+  
+    # minibatch construct
+    ix=torch.randint(0,Xtr.shape[0],(batch_size,),generator=g)
+    Xb,Yb=Xtr[ix],Ytr[ix] # batch X,Y
+  
+    # forward pass
+    emb=C[Xb] # embed the characters into vectors
+    embcat=emb.view(emb.shape[0],emb.shape[1]*emb.shape[2]) # concatenate the vectors
+    hpreact=embcat @ W1+b1 #  hidden layer pre - activation
+    # BatchNorm layer
+    # ------------------------------------------------------
+    bnmeani=hpreact.mean(axis=0,keepdim=True)
+    bnstdi=hpreact.std(axis=0,keepdim=True)
+    hpreact=bngain*(hpreact-bnmeani) / bnstdi + bnbias
+  
+    with torch.no_grad():
+      bnmean_running=0.999 * bnmean_running + 0.001*bnmeani
+      bnstd_running=0.999 * bnstd_running + 0.001*bnstdi
+  
+  
+    h=torch.tanh(hpreact) # hidden layer
+    logits=h @ W2+b2 # output layer
+    loss=F.cross_entropy(logits,Ytr[Yb]) # loss_funtion
+    #print(f'loss:{loss.item()},epochs:{i+1}')
+
+  for  p in parameters:
+    p.grad=None
+
+  # backward pass
+  loss.backward()
+
+  # update
+  lr=0 if i  < 10000 else 0.01
+  for p  in parameters:
+    p.data+=-lr*p.grad
+
+  # strack stats
+  if i % 1000==0:# print every once in while
+    print(f'{i:7d}/{max_steps:7d}:{loss.item():.4f}')
+  lossi.append(loss.log10().item())
+
+```
 
 
 
