@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d8d68f81-20c4-4218-adf2-c360a0ac2832)# Baby Name Generator using Language Model (Bigram)
+## Baby Name Generator using Language Model (Bigram)
 
 ## Overview
 
