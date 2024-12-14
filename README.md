@@ -206,6 +206,34 @@ In this first version of the project, we created a simpler model, with only a on
   lossi.append(loss.log10().item())
 
 ```
+3.5 - Evaluating Training and Testing Data
 
+  ``` Python
+    @torch.no_grad()
+    def  split_loss(split):
+      x,y={
+          'train':(Xtr,Ytr),
+          'val':(Xdev,Ydev),
+          'test':(Xte,yte),
+      }[split]
+    
+      emb=C[x]
+      embcat=emb.view(emb.shape[0],emb.shape[1]*emb.shape[2])
+      hpreact=embcat @ W1 + b1
+      hpreact=bngain*(hpreact-bnmean_running) / bnstd_running + bnbias
+      h=torch.tanh(hpreact)
+      logits=h @ W2+ b2
+      loss=F.cross_entropy(logits,y)
+      print(split,loss.item())
+    
+    split_loss('train')
+    split_loss('val')
+```
 
+```
+
+train 3.299492120742798
+val 3.2995262145996094
+
+```
 
