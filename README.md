@@ -25,12 +25,12 @@ In this first version of the project, we created a simpler model, with only a on
   ![image](https://github.com/user-attachments/assets/230e104b-ae7d-4fd8-9fdb-99c7a4494823)
   
 
-  Visualizing the bigram dataset.
-
+  1.1 -Visualizing the bigram dataset.
+ 
   ![image](https://github.com/user-attachments/assets/3dec20ce-2653-4c32-803b-ff9d6f67e6e7)
   
 
-   Generate names after training
+   1.2 - Generate names after training
    
   ``` Python 
 
@@ -45,13 +45,16 @@ In this first version of the project, we created a simpler model, with only a on
              if ix==0:
                  break
          print('.join(out)')
+```
+
+``` 1.3 - Names generated
 
          junide
          janasah
          p
          copy
          a
-```
+``` 
   ##  2 - Second Version
   In the second version of the project, I implemented embedding layers, which enabled more efficient training.
 
