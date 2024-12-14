@@ -1,4 +1,4 @@
-# Baby Name Generator using Language Model (Bigram)
+![image](https://github.com/user-attachments/assets/d8d68f81-20c4-4218-adf2-c360a0ac2832)# Baby Name Generator using Language Model (Bigram)
 
 ## Overview
 
@@ -135,7 +135,28 @@ In this first version of the project, we created a simpler model, with only a on
 
 
 
+# 3 - Third Version
 
+  In version 3 of the project, I started by performing a diagnosis to better understand the model's behavior. I noticed that the activation functions were saturated, so I adopted some 
+  initialization strategies and added Batch Normalization to improve the model's training.
+
+  3.1 - Visualizing  activation functions  saturated
+
+   ![image](https://github.com/user-attachments/assets/88d886b5-10ba-472f-acbd-b4b35f3ecf3e)
+
+  3.2 - Visualizing activation distributions without initiation strategies
+
+   ![image](https://github.com/user-attachments/assets/e7711f4a-5f92-4d3d-a510-701f84635404)
+ 
+
+  3.3 - Visualizing activation distribuitions  with initiation strategies
+ 
+   ![image](https://github.com/user-attachments/assets/1f700bcd-3b94-41e8-9aab-3c7af8167f50)
+
+
+   ![image](https://github.com/user-attachments/assets/8c5f345b-a9f9-49d8-a935-2fb38b64b19c)
+
+ 3.4 - Batch Normalization
 
 
 
