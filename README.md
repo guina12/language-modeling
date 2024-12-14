@@ -22,6 +22,11 @@ In this first version of the project, we created a simpler model, with only a on
  - Without attention mechanisms
  - Without deep learning with multiple layers
 
+   | Metric | Value |
+|--------|-------|
+| Epochs | 19 |
+| Loss | 2.7537922859191895 |
+
 
 
 
